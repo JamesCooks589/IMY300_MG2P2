@@ -1,3 +1,14 @@
-[gd_scene format=3 uid="uid://wss8c7utmsi1"]
+[gd_scene load_steps=2 format=3 uid="uid://wss8c7utmsi1"]
+
+[ext_resource type="Texture2D" uid="uid://dpc77iobnh77m" path="res://Assets/Idle/background_road.png" id="1_xjlyf"]
 
 [node name="idle" type="Node2D"]
+position = Vector2(795, 1020)
+
+[node name="BackgroundRoad" type="Sprite2D" parent="."]
+position = Vector2(159.5, -474)
+scale = Vector2(0.744141, 0.425781)
+texture = ExtResource("1_xjlyf")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(165, -480)

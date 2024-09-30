@@ -1,14 +1,38 @@
-[gd_scene load_steps=2 format=3 uid="uid://cgwfl8ygd8u1b"]
+[gd_scene load_steps=3 format=3 uid="uid://cgwfl8ygd8u1b"]
 
 [ext_resource type="Texture2D" uid="uid://bm815fyfj5big" path="res://Assets/Home/room.png" id="1_m4mgf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2kugn"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"bad",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"good",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}]
 
 [node name="Home" type="Node2D"]
 
 [node name="Room" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(1281, 801)
+position = Vector2(958, 540.5)
+scale = Vector2(0.747656, 0.674375)
 texture = ExtResource("1_m4mgf")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(1280, 798)
-zoom = Vector2(0.75, 0.68)
+position = Vector2(959, 528)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_2kugn")
+animation = &"bad"
+autoplay = "normal"

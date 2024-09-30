@@ -1,29 +1,40 @@
-[gd_scene load_steps=5 format=3 uid="uid://cj6qpgkmi7ri4"]
+[gd_scene load_steps=7 format=3 uid="uid://cj6qpgkmi7ri4"]
 
 [ext_resource type="Script" path="res://Scenes/Clicker/clicker.gd" id="1_pf6we"]
 [ext_resource type="Texture2D" uid="uid://c5c2pmbx1mxi5" path="res://Assets/Dodging/background_stake.png" id="2_f3tx2"]
 [ext_resource type="Texture2D" uid="uid://edv1i321vxqk" path="res://Assets/Clicker/vampire_hunter_idle.png" id="3_a16bu"]
+[ext_resource type="Texture2D" uid="uid://dj88h37aqj7aq" path="res://Assets/Clicker/vampire_hunter_flinch.png" id="3_u7ht2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ge6vv"]
 animations = [{
-"frames": [],
-"loop": true,
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_u7ht2")
+}],
+"loop": false,
 "name": &"flinch",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_a16bu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_a16bu")
 }],
-"loop": true,
+"loop": false,
 "name": &"idle",
 "speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqkjv"]
+size = Vector2(1018, 690)
 
 [node name="clicker" type="Node2D"]
 script = ExtResource("1_pf6we")
 
 [node name="BackgroundStake" type="Sprite2D" parent="."]
+z_index = -1
 texture_filter = 1
 position = Vector2(967, 546)
 scale = Vector2(0.753125, 0.421875)
@@ -33,8 +44,30 @@ texture = ExtResource("2_f3tx2")
 position = Vector2(961, 544)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(975, 561)
+position = Vector2(967, 629)
 scale = Vector2(0.610937, 0.610937)
 sprite_frames = SubResource("SpriteFrames_ge6vv")
 animation = &"idle"
 autoplay = "idle"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(970, 704)
+shape = SubResource("RectangleShape2D_lqkjv")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 294.0
+offset_top = 243.0
+offset_right = 334.0
+offset_bottom = 266.0
+rotation = 0.0485435
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 881.0
+offset_top = 268.0
+offset_right = 921.0
+offset_bottom = 291.0
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

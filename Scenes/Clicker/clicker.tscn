@@ -1,3 +1,40 @@
-[gd_scene format=3 uid="uid://b87m7m3db70uv"]
+[gd_scene load_steps=5 format=3 uid="uid://cj6qpgkmi7ri4"]
+
+[ext_resource type="Script" path="res://Scenes/Clicker/clicker.gd" id="1_pf6we"]
+[ext_resource type="Texture2D" uid="uid://c5c2pmbx1mxi5" path="res://Assets/Dodging/background_stake.png" id="2_f3tx2"]
+[ext_resource type="Texture2D" uid="uid://edv1i321vxqk" path="res://Assets/Clicker/vampire_hunter_idle.png" id="3_a16bu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ge6vv"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"flinch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_a16bu")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [node name="clicker" type="Node2D"]
+script = ExtResource("1_pf6we")
+
+[node name="BackgroundStake" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(967, 546)
+scale = Vector2(0.753125, 0.421875)
+texture = ExtResource("2_f3tx2")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(961, 544)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(975, 561)
+scale = Vector2(0.610937, 0.610937)
+sprite_frames = SubResource("SpriteFrames_ge6vv")
+animation = &"idle"
+autoplay = "idle"

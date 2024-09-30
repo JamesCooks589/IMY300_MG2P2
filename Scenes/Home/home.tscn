@@ -1,26 +1,208 @@
-[gd_scene load_steps=3 format=3 uid="uid://cgwfl8ygd8u1b"]
+[gd_scene load_steps=33 format=3 uid="uid://cgwfl8ygd8u1b"]
 
 [ext_resource type="Texture2D" uid="uid://bm815fyfj5big" path="res://Assets/Home/room.png" id="1_m4mgf"]
+[ext_resource type="Script" path="res://Scenes/Home/home.gd" id="1_u2558"]
+[ext_resource type="Texture2D" uid="uid://brkd6qmuxtpe4" path="res://Assets/Home/vampire_evil.png" id="2_dox6l"]
+[ext_resource type="Texture2D" uid="uid://b5j61qm68872p" path="res://Assets/Home/vampire_good.png" id="3_nb6bn"]
+[ext_resource type="Texture2D" uid="uid://oayn78vboc22" path="res://Assets/Home/vampire_normal.png" id="4_apcku"]
+[ext_resource type="Texture2D" uid="uid://4jtphkip7yvx" path="res://Assets/Home/fridges/food_box.png" id="5_isvud"]
+[ext_resource type="Texture2D" uid="uid://dhlho6rvq3w4q" path="res://Assets/Home/fridges/food_small_fridge.png" id="6_eq4g3"]
+[ext_resource type="Texture2D" uid="uid://3lu5g6cialan" path="res://Assets/Home/fridges/food_fridge.png" id="7_q4f6o"]
+[ext_resource type="Texture2D" uid="uid://b3lp3q5o66wro" path="res://Assets/Home/tvs/level1_tv.png" id="9_qhquw"]
+[ext_resource type="Texture2D" uid="uid://cuaor2vhfyn1b" path="res://Assets/Home/tvs/level2_tv.png" id="10_t0jtc"]
+[ext_resource type="Texture2D" uid="uid://b0fhgasshrlin" path="res://Assets/Home/tvs/level3_tv.png" id="11_j15ux"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3bgm"]
+atlas = ExtResource("9_qhquw")
+region = Rect2(0, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptex7"]
+atlas = ExtResource("9_qhquw")
+region = Rect2(640, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wng4k"]
+atlas = ExtResource("10_t0jtc")
+region = Rect2(0, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmko5"]
+atlas = ExtResource("10_t0jtc")
+region = Rect2(640, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjay0"]
+atlas = ExtResource("11_j15ux")
+region = Rect2(0, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0lcw"]
+atlas = ExtResource("11_j15ux")
+region = Rect2(640, 0, 640, 640)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_so7o6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3bgm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ptex7")
+}],
+"loop": true,
+"name": &"level1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wng4k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmko5")
+}],
+"loop": true,
+"name": &"level2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjay0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0lcw")
+}],
+"loop": true,
+"name": &"level3",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hv828"]
+atlas = ExtResource("2_dox6l")
+region = Rect2(0, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4cxk4"]
+atlas = ExtResource("2_dox6l")
+region = Rect2(1280, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fl7se"]
+atlas = ExtResource("2_dox6l")
+region = Rect2(2560, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ef1is"]
+atlas = ExtResource("2_dox6l")
+region = Rect2(3840, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epsu8"]
+atlas = ExtResource("3_nb6bn")
+region = Rect2(0, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1isw"]
+atlas = ExtResource("3_nb6bn")
+region = Rect2(1280, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6hpr"]
+atlas = ExtResource("3_nb6bn")
+region = Rect2(2560, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hf8k"]
+atlas = ExtResource("3_nb6bn")
+region = Rect2(3840, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bucax"]
+atlas = ExtResource("4_apcku")
+region = Rect2(0, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1so1"]
+atlas = ExtResource("4_apcku")
+region = Rect2(1280, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wngdv"]
+atlas = ExtResource("4_apcku")
+region = Rect2(2560, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ta8l3"]
+atlas = ExtResource("4_apcku")
+region = Rect2(3840, 0, 1280, 1280)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2kugn"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hv828")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4cxk4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fl7se")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ef1is")
+}],
 "loop": true,
 "name": &"bad",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epsu8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1isw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6hpr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hf8k")
+}],
 "loop": true,
 "name": &"good",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bucax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u1so1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wngdv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ta8l3")
+}],
 "loop": true,
 "name": &"normal",
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_rorwq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_isvud")
+}],
+"loop": true,
+"name": &"level1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_eq4g3")
+}],
+"loop": true,
+"name": &"level2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_q4f6o")
+}],
+"loop": true,
+"name": &"level3",
+"speed": 5.0
+}]
+
 [node name="Home" type="Node2D"]
+script = ExtResource("1_u2558")
 
 [node name="Room" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -31,8 +213,23 @@ texture = ExtResource("1_m4mgf")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(959, 528)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="tv" type="AnimatedSprite2D" parent="."]
+position = Vector2(854, 557)
+sprite_frames = SubResource("SpriteFrames_so7o6")
+animation = &"level1"
+autoplay = "level1"
+
+[node name="vampire" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+position = Vector2(1037, 597)
+scale = Vector2(0.559375, 0.559375)
 sprite_frames = SubResource("SpriteFrames_2kugn")
-animation = &"bad"
+animation = &"normal"
 autoplay = "normal"
+
+[node name="fridge" type="AnimatedSprite2D" parent="."]
+position = Vector2(216, 641)
+scale = Vector2(0.416406, 0.416406)
+sprite_frames = SubResource("SpriteFrames_rorwq")
+animation = &"level1"
+autoplay = "level1"

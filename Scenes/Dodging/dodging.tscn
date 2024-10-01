@@ -1,3 +1,74 @@
-[gd_scene format=3 uid="uid://b87m7m3db70uv"]
+[gd_scene load_steps=7 format=3 uid="uid://b87m7m3db70uv"]
 
-[node name="clicker" type="Node2D"]
+[ext_resource type="Script" path="res://Scenes/Dodging/dodging.gd" id="1_rji2i"]
+[ext_resource type="PackedScene" uid="uid://k375lo7w11tj" path="res://Scenes/Dodging/stake.tscn" id="2_tjdn2"]
+[ext_resource type="PackedScene" uid="uid://w400vit0l5pw" path="res://Scenes/Dodging/familiar.tscn" id="2_vb6b7"]
+[ext_resource type="PackedScene" uid="uid://b7pm3r1hecuvn" path="res://Scenes/Dodging/coin.tscn" id="3_m6iko"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t1tjs"]
+size = Vector2(43, 1089)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8ccrj"]
+font_size = 300
+
+[node name="dodging" type="Node2D"]
+script = ExtResource("1_rji2i")
+falling_object_scene = ExtResource("2_tjdn2")
+coin_scene = ExtResource("3_m6iko")
+
+[node name="collisions" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collisions"]
+position = Vector2(11.5, 534.5)
+shape = SubResource("RectangleShape2D_t1tjs")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="collisions"]
+position = Vector2(1908, 534.5)
+shape = SubResource("RectangleShape2D_t1tjs")
+
+[node name="familiar" parent="." instance=ExtResource("2_vb6b7")]
+position = Vector2(950, 810)
+scale = Vector2(0.4, 0.4)
+
+[node name="GoldLabel" type="Label" parent="."]
+offset_left = 926.0
+offset_top = 39.0
+offset_right = 966.0
+offset_bottom = 62.0
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 81.0
+offset_top = 33.0
+offset_right = 121.0
+offset_bottom = 56.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="GameOverMenu" type="ColorRect" parent="."]
+visible = false
+z_index = 2
+offset_right = 1928.0
+offset_bottom = 1080.0
+color = Color(0.325441, 0.325441, 0.325441, 1)
+
+[node name="Label" type="Label" parent="GameOverMenu"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 234.0
+offset_right = 1840.0
+offset_bottom = 643.0
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_8ccrj")
+
+[node name="PlayAgain" type="Button" parent="GameOverMenu"]
+process_mode = 2
+layout_mode = 0
+offset_left = 626.0
+offset_top = 653.0
+offset_right = 1300.0
+offset_bottom = 834.0
+theme_override_font_sizes/font_size = 100
+text = "PlayAgain
+"
+
+[connection signal="pressed" from="GameOverMenu/PlayAgain" to="." method="_on_play_again_pressed"]

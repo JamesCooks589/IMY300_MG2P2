@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7pm3r1hecuvn"]
+
+[ext_resource type="Texture2D" uid="uid://c0qxnfmu3gmhb" path="res://Assets/Dodging/coin.png" id="1_0iki6"]
+[ext_resource type="Script" path="res://Scenes/Dodging/coin.gd" id="1_jfdwh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aky7q"]
+size = Vector2(45, 39)
+
+[node name="coin" type="Node2D"]
+script = ExtResource("1_jfdwh")
+
+[node name="Coin" type="Sprite2D" parent="."]
+position = Vector2(36, 32)
+scale = Vector2(0.224, 0.224)
+texture = ExtResource("1_0iki6")
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(36, 33)
+shape = SubResource("RectangleShape2D_aky7q")
+
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

@@ -6,5 +6,5 @@ var damage_upgrade_cost = 1
 var coin_value = 0
 var upgrade_level = 2
 
-
-
+# Dodging game variables
+var game_running : bool = true 

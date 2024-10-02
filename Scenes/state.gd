@@ -36,6 +36,8 @@ var sleep_level = 100
 var food_drain_rate = 3
 var boredom_drain_rate = 3
 var sleep_drain_rate = 3
+var goodVampireRate = 0
+var badVampireRate = 0
 var inMiniGame = false
 var hasDrainedInMiniGame = false
 var sleeping = false
@@ -87,13 +89,14 @@ var bed_slower = false
 #Global variables:
 var GOLD = 100
 var firstTimePlaying = true
+var evilBoost = 0
 
 func _process(delta):
 	if !inMiniGame:
-		food_level -= delta * food_drain_rate
-		boredom_level -= delta * boredom_drain_rate
+		food_level -= delta * (food_drain_rate + goodVampireRate + badVampireRate) 
+		boredom_level -= delta * (boredom_drain_rate + goodVampireRate + badVampireRate)
 		if !sleeping:
-			sleep_level -= delta * sleep_drain_rate
+			sleep_level -= delta * (sleep_drain_rate + goodVampireRate + badVampireRate)
 	else:
 		if !hasDrainedInMiniGame:
 			hasDrainedInMiniGame = true

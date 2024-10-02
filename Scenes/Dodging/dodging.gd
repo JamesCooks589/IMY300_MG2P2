@@ -81,7 +81,7 @@ func spawn_coin():
 
 # Function to handle collecting coins
 func collect_coin():
-	State.GOLD += State.gold_worth
+	State.GOLD += State.gold_worth + (State.gold_worth * State.evilBoost)
 
 # Function to display the game over screen (or reset option)
 func show_game_over_screen():

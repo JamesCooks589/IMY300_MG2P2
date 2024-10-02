@@ -25,9 +25,9 @@ func _on_pawn_shop_area_area_entered(area):
 	if area.name == "CarArea":
 		var double_value_chance = randi_range(1,5)
 		if double_value_chance <= State.chance_to_hit:
-			State.GOLD += State.item_value * State.pawn_shop_level * 2
+			State.GOLD += (State.item_value * State.pawn_shop_level * 2) + (State.item_value * State.pawn_shop_level * 2 * State.evilBoost)
 		else:
-			State.GOLD += State.item_value * State.pawn_shop_level
+			State.GOLD += (State.item_value * State.pawn_shop_level) + (State.item_value * State.pawn_shop_level * State.evilBoost)
 		
 		update_UI()
 

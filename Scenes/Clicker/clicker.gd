@@ -37,7 +37,7 @@ func do_damage():
 			npc_current_hp -= 10 * State.damage_level
 	else:
 		State.current_level += 1
-		State.GOLD += State.coin_value
+		State.GOLD += State.coin_value + (State.coin_value * State.evilBoost)
 		npc_max_hp = floor(npc_max_hp * 1.15)
 		npc_current_hp = npc_max_hp
 	healthbar_update()

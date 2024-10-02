@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://b87m7m3db70uv"]
 
 [ext_resource type="Script" path="res://Scenes/Dodging/dodging.gd" id="1_rji2i"]
-[ext_resource type="PackedScene" uid="uid://k375lo7w11tj" path="res://Scenes/Dodging/stake.tscn" id="2_tjdn2"]
-[ext_resource type="PackedScene" uid="uid://w400vit0l5pw" path="res://Scenes/Dodging/familiar.tscn" id="2_vb6b7"]
-[ext_resource type="PackedScene" uid="uid://b7pm3r1hecuvn" path="res://Scenes/Dodging/coin.tscn" id="3_m6iko"]
+[ext_resource type="PackedScene" path="res://Scenes/Dodging/stake.tscn" id="2_tjdn2"]
+[ext_resource type="PackedScene" path="res://Scenes/Dodging/familiar.tscn" id="2_vb6b7"]
+[ext_resource type="PackedScene" path="res://Scenes/Dodging/coin.tscn" id="3_m6iko"]
 [ext_resource type="Texture2D" uid="uid://co6nnfs2istps" path="res://Assets/Dodging/background_dodging.png" id="4_vgc1d"]
 [ext_resource type="AudioStream" uid="uid://d16lf2543ddgk" path="res://Assets/Sound/Vampire Survivors Soundtrack -  Reincarnated Echoes (looping).mp3" id="6_5ybel"]
 [ext_resource type="AudioStream" uid="uid://dflspey1jfucf" path="res://Assets/Sound/Click - Sound Effect (HD)-[AudioTrimmer.com].mp3" id="7_ciyqy"]

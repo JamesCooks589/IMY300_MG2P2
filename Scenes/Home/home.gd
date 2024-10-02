@@ -203,6 +203,8 @@ func _on_burger_pressed():
 		
 	if State.progress == -100:
 		State.vampire_state = "evil"
+		State.badVampireRate = 1
+		State.evilBoost = 2
 
 
 func _on_watermelon_pressed():
@@ -218,6 +220,9 @@ func _on_watermelon_pressed():
 		
 	if State.progress == 100:
 		State.vampire_state = "good"
+		State.goodVampireRate = -2
+		if timerRunning == false:
+			State.GOLD += 100
 
 
 func _on_blood_pressed():
@@ -234,6 +239,8 @@ func _on_blood_pressed():
 		
 	if State.progress == -100:
 		State.vampire_state = "evil"
+		State.badVampireRate = 1
+		State.evilBoost = 2
 	
 	
 func _on_broccoli_pressed():
@@ -250,6 +257,7 @@ func _on_broccoli_pressed():
 		
 	if State.progress == 100:
 		State.vampire_state = "good"
+		State.goodVampireRate = -2
 
 
 func _on_transformation_timer_timeout():
@@ -257,3 +265,18 @@ func _on_transformation_timer_timeout():
 	$vampire.play("normal")
 	State.progress = 0
 	timerRunning = false
+	State.goodVampireRate = 0
+	State.badVampireRate = 0
+	State.evilBoost = 0
+
+
+func _on_forward_time_pressed():
+	State.GOLD += 100 * State.car_level
+	State.inMiniGame = true
+	State.hasDrainedInMiniGame = false
+	$fakeMiniGame.start()
+	
+
+
+func _on_fake_mini_game_timeout():
+	State.inMiniGame = false

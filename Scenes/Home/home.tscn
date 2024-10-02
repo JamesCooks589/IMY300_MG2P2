@@ -704,6 +704,7 @@ text = "SHOP"
 
 [node name="shop" parent="." instance=ExtResource("27_8o0mb")]
 visible = false
+z_index = 5
 
 [node name="SleepingTimer" type="Timer" parent="."]
 wait_time = 2.0
@@ -778,6 +779,17 @@ autoplay = true
 stream = ExtResource("36_28wfh")
 volume_db = -5.417
 
+[node name="forwardTime" type="Button" parent="."]
+offset_left = 1726.0
+offset_top = 943.0
+offset_right = 1889.0
+offset_bottom = 1025.0
+text = "TIME"
+
+[node name="fakeMiniGame" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
 [connection signal="input_event" from="TVArea" to="." method="_on_tv_area_input_event"]
 [connection signal="input_event" from="BedArea" to="." method="_on_bed_area_input_event"]
 [connection signal="input_event" from="fridgeArea" to="." method="_on_fridge_area_input_event"]
@@ -792,3 +804,5 @@ volume_db = -5.417
 [connection signal="pressed" from="FoodOptions/blood" to="." method="_on_blood_pressed"]
 [connection signal="pressed" from="FoodOptions/broccoli" to="." method="_on_broccoli_pressed"]
 [connection signal="timeout" from="TransformationTimer" to="." method="_on_transformation_timer_timeout"]
+[connection signal="pressed" from="forwardTime" to="." method="_on_forward_time_pressed"]
+[connection signal="timeout" from="fakeMiniGame" to="." method="_on_fake_mini_game_timeout"]

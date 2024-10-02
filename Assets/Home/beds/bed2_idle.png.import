@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjkkw85iq67ca"
-path="res://.godot/imported/coffin_bed.png-c52328b873d10148b81fe178b6763ba7.ctex"
+uid="uid://ca5p3boh6q5pu"
+path="res://.godot/imported/bed2_idle.png-a5c8f8007da5cf377b528a506a1d11cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Home/beds/coffin_bed.png"
-dest_files=["res://.godot/imported/coffin_bed.png-c52328b873d10148b81fe178b6763ba7.ctex"]
+source_file="res://Assets/Home/beds/bed2_idle.png"
+dest_files=["res://.godot/imported/bed2_idle.png-a5c8f8007da5cf377b528a506a1d11cf.ctex"]
 
 [params]
 

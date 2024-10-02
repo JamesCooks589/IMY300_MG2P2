@@ -2,9 +2,8 @@ extends Node2D
 
 # Variables
 var object_speed = 200.0
-var spawn_rate = 1.0
 var score = 0
-var gold = 0
+
 
 # Preload falling object and coin scenes
 @export var falling_object_scene: PackedScene
@@ -23,6 +22,12 @@ func _ready():
 	score = 0
 	object_speed = 200.0
 	State.game_running = true
+	get_tree().paused = false
+	State.inMiniGame = true
+	if !State.retryClicked:
+		State.hasDrainedInMiniGame = false
+	
+	gold_label.text = "Gold: %d" % State.GOLD
 
 
 func _process(delta):
@@ -44,14 +49,16 @@ func _process(delta):
 	spawn_timer += delta
 	coin_spawn_timer += delta
 
-	if spawn_timer >= spawn_rate:
+	if spawn_timer >= State.spawn_rate:
 		spawn_falling_object()
 		spawn_timer = 0.0
 
 	# Spawn a coin randomly every 5-10 seconds
-	if coin_spawn_timer >= randi_range(5, 10):
+	if coin_spawn_timer >= randi_range(5, State.gold_max_time_to_spawn):
 		spawn_coin()
 		coin_spawn_timer = 0.0
+		
+	gold_label.text = "Gold: %d" % State.GOLD
 
 func spawn_falling_object():
 	# Instance the falling object
@@ -74,8 +81,7 @@ func spawn_coin():
 
 # Function to handle collecting coins
 func collect_coin():
-	gold += 1
-	gold_label.text = "Gold: %d" % gold
+	State.GOLD += State.gold_worth
 
 # Function to display the game over screen (or reset option)
 func show_game_over_screen():
@@ -88,5 +94,11 @@ func reset_game():
 	get_tree().reload_current_scene()  # Reload the current scene
 
 func _on_play_again_pressed():
-	print("pressed")
+	State.retryClicked = true
 	reset_game()
+
+
+func _on_play_again_2_pressed():
+	get_tree().paused = false
+	State.retryClicked = false
+	get_tree().change_scene_to_file("res://Scenes/Home/home.tscn")

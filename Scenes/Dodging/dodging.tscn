@@ -71,4 +71,16 @@ theme_override_font_sizes/font_size = 100
 text = "PlayAgain
 "
 
+[node name="PlayAgain2" type="Button" parent="GameOverMenu"]
+process_mode = 2
+layout_mode = 0
+offset_left = 626.0
+offset_top = 851.0
+offset_right = 1300.0
+offset_bottom = 1032.0
+theme_override_font_sizes/font_size = 100
+text = "Return Home
+"
+
 [connection signal="pressed" from="GameOverMenu/PlayAgain" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="GameOverMenu/PlayAgain2" to="." method="_on_play_again_2_pressed"]

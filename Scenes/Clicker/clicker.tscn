@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cj6qpgkmi7ri4"]
+[gd_scene load_steps=9 format=3 uid="uid://cj6qpgkmi7ri4"]
 
 [ext_resource type="Script" path="res://Scenes/Clicker/clicker.gd" id="1_pf6we"]
 [ext_resource type="Texture2D" uid="uid://c5c2pmbx1mxi5" path="res://Assets/Dodging/background_stake.png" id="2_f3tx2"]
@@ -30,6 +30,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lqkjv"]
 size = Vector2(1018, 690)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qw66x"]
+bg_color = Color(0.916144, 0, 0.137874, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vhxcg"]
+bg_color = Color(2.02149e-06, 0.561509, 0.141869, 1)
+
 [node name="clicker" type="Node2D"]
 script = ExtResource("1_pf6we")
 
@@ -44,30 +50,46 @@ texture = ExtResource("2_f3tx2")
 position = Vector2(961, 544)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(967, 629)
+texture_filter = 1
+position = Vector2(983, 485)
 scale = Vector2(0.610937, 0.610937)
 sprite_frames = SubResource("SpriteFrames_ge6vv")
 animation = &"idle"
 autoplay = "idle"
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(16, -144)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(970, 704)
 shape = SubResource("RectangleShape2D_lqkjv")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 294.0
-offset_top = 243.0
-offset_right = 334.0
-offset_bottom = 266.0
-rotation = 0.0485435
+z_index = 1
+offset_left = 577.0
+offset_top = 932.0
+offset_right = 1355.0
+offset_bottom = 1040.0
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="."]
-offset_left = 881.0
-offset_top = 268.0
-offset_right = 921.0
-offset_bottom = 291.0
+[node name="return_home" type="Button" parent="."]
+offset_left = 27.0
+offset_top = 29.0
+offset_right = 569.0
+offset_bottom = 103.0
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 577.0
+offset_top = 932.0
+offset_right = 1356.0
+offset_bottom = 1041.0
+theme_override_styles/background = SubResource("StyleBoxFlat_qw66x")
+theme_override_styles/fill = SubResource("StyleBoxFlat_vhxcg")
+value = 100.0
+show_percentage = false
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="pressed" from="return_home" to="." method="_on_return_home_pressed"]

@@ -1,14 +1,233 @@
-[gd_scene load_steps=2 format=3 uid="uid://wss8c7utmsi1"]
+[gd_scene load_steps=27 format=3 uid="uid://wss8c7utmsi1"]
 
+[ext_resource type="Script" path="res://Scenes/Idle/idle.gd" id="1_al5fn"]
 [ext_resource type="Texture2D" uid="uid://dpc77iobnh77m" path="res://Assets/Idle/background_road.png" id="1_xjlyf"]
+[ext_resource type="Texture2D" uid="uid://bgubtvo2hsma5" path="res://Assets/Idle/vampy_home.png" id="3_rp1lx"]
+[ext_resource type="Texture2D" uid="uid://c4imqsad4lkp8" path="res://Assets/Idle/pawn_shop_level1.png" id="4_n7ami"]
+[ext_resource type="Texture2D" uid="uid://bf7w2dq1p5wwk" path="res://Assets/Idle/pawn_shop_level3.png" id="5_lytyu"]
+[ext_resource type="Texture2D" uid="uid://b0cobpprgqana" path="res://Assets/Idle/pawn_shop_level2.png" id="6_x2ftl"]
+[ext_resource type="Texture2D" uid="uid://ci3qjqnt0ne2i" path="res://Assets/Idle/car_1.png" id="7_8y0m0"]
+[ext_resource type="Texture2D" uid="uid://dqhp0k2wmheuj" path="res://Assets/Idle/car_2.png" id="8_dbo0x"]
+[ext_resource type="Texture2D" uid="uid://y35qjaqi0cu5" path="res://Assets/Idle/car_3.png" id="9_4377x"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n6whf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_n7ami")
+}],
+"loop": true,
+"name": &"level1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_lytyu")
+}],
+"loop": true,
+"name": &"level2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_x2ftl")
+}],
+"loop": true,
+"name": &"level3",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xk45a"]
+size = Vector2(189, 355)
+
+[sub_resource type="Curve2D" id="Curve2D_4lvee"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -637, -150, 0, 0, 0, 0, 902, -135, 0, 0, 0, 0, -637, -147)
+}
+point_count = 3
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtubk"]
+atlas = ExtResource("7_8y0m0")
+region = Rect2(0, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5q0dr"]
+atlas = ExtResource("7_8y0m0")
+region = Rect2(1280, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7hsw"]
+atlas = ExtResource("7_8y0m0")
+region = Rect2(2560, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_te1jb"]
+atlas = ExtResource("7_8y0m0")
+region = Rect2(3840, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20nnp"]
+atlas = ExtResource("8_dbo0x")
+region = Rect2(0, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhtbi"]
+atlas = ExtResource("8_dbo0x")
+region = Rect2(1280, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_on0x4"]
+atlas = ExtResource("8_dbo0x")
+region = Rect2(2560, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0c6ia"]
+atlas = ExtResource("8_dbo0x")
+region = Rect2(3840, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipv4o"]
+atlas = ExtResource("9_4377x")
+region = Rect2(0, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mamf7"]
+atlas = ExtResource("9_4377x")
+region = Rect2(1280, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ageof"]
+atlas = ExtResource("9_4377x")
+region = Rect2(2560, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhx1b"]
+atlas = ExtResource("9_4377x")
+region = Rect2(3840, 0, 1280, 1280)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hx6ni"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xtubk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5q0dr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w7hsw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_te1jb")
+}],
+"loop": true,
+"name": &"level1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20nnp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jhtbi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_on0x4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0c6ia")
+}],
+"loop": true,
+"name": &"level2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ipv4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mamf7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ageof")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhx1b")
+}],
+"loop": true,
+"name": &"level3",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0i53k"]
+size = Vector2(1114.54, 618.146)
 
 [node name="idle" type="Node2D"]
 position = Vector2(795, 1020)
+script = ExtResource("1_al5fn")
 
 [node name="BackgroundRoad" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(159.5, -474)
 scale = Vector2(0.744141, 0.425781)
 texture = ExtResource("1_xjlyf")
 
+[node name="VampyHome" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-578, -341)
+scale = Vector2(0.221875, 0.221875)
+texture = ExtResource("3_rp1lx")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(165, -480)
+
+[node name="PawnShopArea" type="Area2D" parent="."]
+position = Vector2(887, -339)
+
+[node name="PawnShop" type="AnimatedSprite2D" parent="PawnShopArea"]
+position = Vector2(3.00006, 2.99991)
+scale = Vector2(0.283594, 0.283594)
+sprite_frames = SubResource("SpriteFrames_n6whf")
+animation = &"level1"
+autoplay = "level1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PawnShopArea"]
+position = Vector2(-11.5, 176.5)
+shape = SubResource("RectangleShape2D_xk45a")
+
+[node name="CarPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_4lvee")
+
+[node name="CarPathFollow" type="PathFollow2D" parent="CarPath"]
+position = Vector2(-637, -150)
+rotates = false
+
+[node name="Car" type="AnimatedSprite2D" parent="CarPath/CarPathFollow"]
+texture_filter = 1
+position = Vector2(17, -48)
+scale = Vector2(0.320313, 0.320313)
+sprite_frames = SubResource("SpriteFrames_hx6ni")
+animation = &"level1"
+autoplay = "level1"
+
+[node name="CarArea" type="Area2D" parent="CarPath/CarPathFollow/Car"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CarPath/CarPathFollow/Car/CarArea"]
+position = Vector2(28.8833, 188.065)
+shape = SubResource("RectangleShape2D_0i53k")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 15.0
+offset_top = -993.0
+offset_right = 181.0
+offset_bottom = -924.0
+theme_override_font_sizes/font_size = 50
+text = "GOLD: "
+
+[node name="gold_count" type="Label" parent="."]
+offset_left = 189.0
+offset_top = -992.0
+offset_right = 247.0
+offset_bottom = -923.0
+theme_override_font_sizes/font_size = 50
+text = "10"
+
+[node name="return_home" type="Button" parent="."]
+offset_left = -766.0
+offset_top = -958.0
+offset_right = -378.0
+offset_bottom = -868.0
+theme_override_font_sizes/font_size = 50
+text = "RETURN HOME"
+
+[connection signal="area_entered" from="PawnShopArea" to="." method="_on_pawn_shop_area_area_entered"]
+[connection signal="pressed" from="return_home" to="." method="_on_return_home_pressed"]

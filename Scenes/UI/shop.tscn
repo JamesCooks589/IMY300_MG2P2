@@ -1,0 +1,169 @@
+[gd_scene load_steps=10 format=3 uid="uid://b2amsymgja4gx"]
+
+[ext_resource type="Texture2D" uid="uid://2jolrd7shvym" path="res://Assets/Home/mini-game-icon.png" id="1_rwm1q"]
+[ext_resource type="Script" path="res://Scenes/UI/shop.gd" id="1_tty4k"]
+[ext_resource type="Texture2D" uid="uid://jci75aqx2pm1" path="res://Assets/Home/bat_wings_flapping-Sheet.png" id="2_vk8c7"]
+[ext_resource type="Texture2D" uid="uid://d1yghds8ixhat" path="res://Assets/Dodging/stake.png" id="3_13ai1"]
+[ext_resource type="Texture2D" uid="uid://4jtphkip7yvx" path="res://Assets/Home/fridges/food_box.png" id="5_s6ggv"]
+[ext_resource type="Texture2D" uid="uid://ci3qjqnt0ne2i" path="res://Assets/Idle/car_1.png" id="5_sv2mi"]
+[ext_resource type="Texture2D" uid="uid://b3lp3q5o66wro" path="res://Assets/Home/tvs/level1_tv.png" id="6_d3u3l"]
+[ext_resource type="Texture2D" uid="uid://edv1i321vxqk" path="res://Assets/Clicker/vampire_hunter_idle.png" id="7_0ktkt"]
+[ext_resource type="Texture2D" uid="uid://dnsdsagoeovhu" path="res://Assets/Home/beds/bed1_idle.png" id="8_xl3nq"]
+
+[node name="shop" type="Node2D"]
+process_mode = 2
+script = ExtResource("1_tty4k")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 544.0
+offset_bottom = 1078.0
+color = Color(0.281187, 0.281187, 0.281187, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 24.0
+offset_top = 30.0
+offset_right = 509.0
+offset_bottom = 167.0
+theme_override_font_sizes/font_size = 100
+text = "THE SHOP"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 41.0
+offset_top = 170.0
+offset_right = 326.0
+offset_bottom = 246.0
+theme_override_font_sizes/font_size = 50
+
+[node name="MiniGameUpgrade" type="Button" parent="."]
+offset_left = 21.0
+offset_top = 270.0
+offset_right = 266.0
+offset_bottom = 336.0
+toggle_mode = true
+
+[node name="minigame_icon" type="Sprite2D" parent="MiniGameUpgrade"]
+position = Vector2(120, 28)
+scale = Vector2(0.186122, 0.186122)
+texture = ExtResource("1_rwm1q")
+
+[node name="VampireUpgrades" type="Button" parent="."]
+offset_left = 271.0
+offset_top = 270.0
+offset_right = 516.0
+offset_bottom = 336.0
+theme_override_colors/font_pressed_color = Color(0.115438, 0.486835, 0.941586, 1)
+toggle_mode = true
+
+[node name="BatWingsFlapping-sheet" type="Sprite2D" parent="VampireUpgrades"]
+position = Vector2(123, 18)
+scale = Vector2(0.200781, 0.200781)
+texture = ExtResource("2_vk8c7")
+hframes = 10
+
+[node name="LeftUpgrade" type="Button" parent="."]
+offset_left = 22.0
+offset_top = 342.0
+offset_right = 182.0
+offset_bottom = 408.0
+toggle_mode = true
+
+[node name="dodging" type="Sprite2D" parent="LeftUpgrade"]
+visible = false
+position = Vector2(82, 35)
+rotation = 3.14159
+scale = Vector2(0.511111, 0.511111)
+texture = ExtResource("3_13ai1")
+
+[node name="fridge" type="Sprite2D" parent="LeftUpgrade"]
+visible = false
+position = Vector2(80, 19)
+scale = Vector2(0.0667969, 0.0667969)
+texture = ExtResource("5_s6ggv")
+
+[node name="MiddleUpgrade" type="Button" parent="."]
+offset_left = 189.0
+offset_top = 342.0
+offset_right = 349.0
+offset_bottom = 408.0
+toggle_mode = true
+
+[node name="idle" type="Sprite2D" parent="MiddleUpgrade"]
+visible = false
+position = Vector2(79, 17)
+scale = Vector2(0.0734375, 0.0734375)
+texture = ExtResource("5_sv2mi")
+hframes = 4
+
+[node name="tv" type="Sprite2D" parent="MiddleUpgrade"]
+visible = false
+position = Vector2(82, 19)
+scale = Vector2(0.128906, 0.128906)
+texture = ExtResource("6_d3u3l")
+hframes = 2
+
+[node name="RightUpgrade" type="Button" parent="."]
+offset_left = 357.0
+offset_top = 342.0
+offset_right = 517.0
+offset_bottom = 408.0
+toggle_mode = true
+
+[node name="clicker" type="Sprite2D" parent="RightUpgrade"]
+visible = false
+position = Vector2(79, 25)
+scale = Vector2(0.059375, 0.059375)
+texture = ExtResource("7_0ktkt")
+
+[node name="bed" type="Sprite2D" parent="RightUpgrade"]
+visible = false
+position = Vector2(83, 34)
+scale = Vector2(0.0472656, 0.0472656)
+texture = ExtResource("8_xl3nq")
+
+[node name="RightUpgrade2" type="Button" parent="."]
+offset_left = 144.0
+offset_top = 981.0
+offset_right = 402.0
+offset_bottom = 1058.0
+theme_override_font_sizes/font_size = 50
+text = "EXIT SHOP"
+
+[node name="clicker" type="Sprite2D" parent="RightUpgrade2"]
+visible = false
+position = Vector2(79, 25)
+scale = Vector2(0.059375, 0.059375)
+texture = ExtResource("7_0ktkt")
+
+[node name="bed" type="Sprite2D" parent="RightUpgrade2"]
+visible = false
+position = Vector2(83, 34)
+scale = Vector2(0.0472656, 0.0472656)
+texture = ExtResource("8_xl3nq")
+
+[node name="Upgrade1" type="Button" parent="."]
+offset_left = 21.0
+offset_top = 423.0
+offset_right = 519.0
+offset_bottom = 506.0
+
+[node name="Upgrade2" type="Button" parent="."]
+offset_left = 21.0
+offset_top = 524.0
+offset_right = 519.0
+offset_bottom = 607.0
+
+[node name="Upgrade3" type="Button" parent="."]
+offset_left = 21.0
+offset_top = 630.0
+offset_right = 519.0
+offset_bottom = 713.0
+
+[connection signal="toggled" from="MiniGameUpgrade" to="." method="_on_mini_game_upgrade_toggled"]
+[connection signal="toggled" from="VampireUpgrades" to="." method="_on_vampire_upgrades_toggled"]
+[connection signal="toggled" from="LeftUpgrade" to="." method="_on_left_upgrade_toggled"]
+[connection signal="toggled" from="MiddleUpgrade" to="." method="_on_middle_upgrade_toggled"]
+[connection signal="toggled" from="RightUpgrade" to="." method="_on_right_upgrade_toggled"]
+[connection signal="pressed" from="RightUpgrade2" to="." method="_on_right_upgrade_2_pressed"]
+[connection signal="pressed" from="Upgrade1" to="." method="_on_upgrade_1_pressed"]
+[connection signal="pressed" from="Upgrade2" to="." method="_on_upgrade_2_pressed"]
+[connection signal="pressed" from="Upgrade3" to="." method="_on_upgrade_3_pressed"]

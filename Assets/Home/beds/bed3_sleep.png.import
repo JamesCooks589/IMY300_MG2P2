@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pml2wctcuvs"
-path="res://.godot/imported/blanket_bed.png-600ea18f839ffb34876ce59dcbd34937.ctex"
+uid="uid://ctr27m7alhhi5"
+path="res://.godot/imported/bed3_sleep.png-f0ab515d7cbef8279e7c0e48f76fe0cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Home/beds/blanket_bed.png"
-dest_files=["res://.godot/imported/blanket_bed.png-600ea18f839ffb34876ce59dcbd34937.ctex"]
+source_file="res://Assets/Home/beds/bed3_sleep.png"
+dest_files=["res://.godot/imported/bed3_sleep.png-f0ab515d7cbef8279e7c0e48f76fe0cc.ctex"]
 
 [params]
 

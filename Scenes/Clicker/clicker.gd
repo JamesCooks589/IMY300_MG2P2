@@ -7,29 +7,35 @@ var particles = load("res://Scenes/Clicker/Particles/particles.tscn")
 func _ready():
 	npc_max_hp = npc_max_hp * State.current_level
 	npc_current_hp = npc_max_hp
-
+	get_tree().paused = false
+	State.inMiniGame = true
+	State.hasDrainedInMiniGame = false
+	$ProgressBar.max_value = npc_max_hp
+	healthbar_update()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if npc_current_hp <= 0:
 		do_damage()
-	$Label.text = str(npc_current_hp)
-	$Label2.text = str(npc_max_hp)
+	$Label.text = str(npc_current_hp) + "/" + str(npc_max_hp)
+	
+	$ProgressBar.max_value = npc_max_hp
 
 func healthbar_update():
-	pass
+	$ProgressBar.value = npc_current_hp
 
 
 
 func do_damage():
 	if npc_current_hp > 0:
 		var crit_chance = randi_range(1,5)
-		if crit_chance == 3:
-			npc_current_hp -= 50 * State.damage_level * 2
+		if crit_chance <= State.chance_to_crit:
+			npc_current_hp -= 10 * State.damage_level * 2
 		else:
-			npc_current_hp -= 50 * State.damage_level
+			npc_current_hp -= 10 * State.damage_level
 	else:
 		State.current_level += 1
+		State.GOLD += State.coin_value
 		npc_max_hp = floor(npc_max_hp * 1.15)
 		npc_current_hp = npc_max_hp
 	healthbar_update()
@@ -53,3 +59,7 @@ func _on_animated_sprite_2d_animation_finished():
 	if $AnimatedSprite2D.animation == "flinch":
 		$AnimatedSprite2D.play("idle")
 		
+
+
+func _on_return_home_pressed():
+	get_tree().change_scene_to_file("res://Scenes/Home/home.tscn")

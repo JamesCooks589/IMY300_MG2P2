@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csjxigx78xw1x"
-path="res://.godot/imported/rock_bed.png-57a35a5f844b45686b33525fa771ce68.ctex"
+uid="uid://co6nnfs2istps"
+path="res://.godot/imported/background_dodging.png-dfd7993f4166c970e204e55de998f722.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Home/beds/rock_bed.png"
-dest_files=["res://.godot/imported/rock_bed.png-57a35a5f844b45686b33525fa771ce68.ctex"]
+source_file="res://Assets/Dodging/background_dodging.png"
+dest_files=["res://.godot/imported/background_dodging.png-dfd7993f4166c970e204e55de998f722.ctex"]
 
 [params]
 

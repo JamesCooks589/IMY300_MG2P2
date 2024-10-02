@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cgwfl8ygd8u1b"]
+[gd_scene load_steps=81 format=3 uid="uid://cgwfl8ygd8u1b"]
 
 [ext_resource type="Texture2D" uid="uid://bm815fyfj5big" path="res://Assets/Home/room.png" id="1_m4mgf"]
 [ext_resource type="Script" path="res://Scenes/Home/home.gd" id="1_u2558"]
@@ -11,6 +11,28 @@
 [ext_resource type="Texture2D" uid="uid://b3lp3q5o66wro" path="res://Assets/Home/tvs/level1_tv.png" id="9_qhquw"]
 [ext_resource type="Texture2D" uid="uid://cuaor2vhfyn1b" path="res://Assets/Home/tvs/level2_tv.png" id="10_t0jtc"]
 [ext_resource type="Texture2D" uid="uid://b0fhgasshrlin" path="res://Assets/Home/tvs/level3_tv.png" id="11_j15ux"]
+[ext_resource type="Texture2D" uid="uid://dnsdsagoeovhu" path="res://Assets/Home/beds/bed1_idle.png" id="12_umx0i"]
+[ext_resource type="Texture2D" uid="uid://b23mpchh5d51p" path="res://Assets/Home/beds/bed1_sleep.png" id="13_ikw3f"]
+[ext_resource type="Texture2D" uid="uid://ca5p3boh6q5pu" path="res://Assets/Home/beds/bed2_idle.png" id="14_mamt4"]
+[ext_resource type="Texture2D" uid="uid://ccq4hqovedpmv" path="res://Assets/Home/beds/bed2_sleep.png" id="15_t7rgf"]
+[ext_resource type="Texture2D" uid="uid://cbgbssg2g373k" path="res://Assets/Home/beds/bed3_idle.png" id="16_cj0ey"]
+[ext_resource type="Texture2D" uid="uid://ctr27m7alhhi5" path="res://Assets/Home/beds/bed3_sleep.png" id="17_3n705"]
+[ext_resource type="Texture2D" uid="uid://2jolrd7shvym" path="res://Assets/Home/mini-game-icon.png" id="18_dodjy"]
+[ext_resource type="Texture2D" uid="uid://dccvyj1xq3fa8" path="res://Assets/Home/health.png" id="19_my0mp"]
+[ext_resource type="Texture2D" uid="uid://jci75aqx2pm1" path="res://Assets/Home/bat_wings_flapping-Sheet.png" id="20_jm2to"]
+[ext_resource type="Texture2D" uid="uid://bntypx8av8d14" path="res://Assets/Home/emote_bored.png" id="21_bgnlb"]
+[ext_resource type="Texture2D" uid="uid://diwvuaxgphtif" path="res://Assets/Home/emote_hungry.png" id="22_k1l37"]
+[ext_resource type="Texture2D" uid="uid://bj7ku01sfhkyv" path="res://Assets/Home/emote_sleepy.png" id="23_mkdod"]
+[ext_resource type="Texture2D" uid="uid://88ytdbvl30o6" path="res://Assets/UI/boredom_bar.png" id="24_w1hgy"]
+[ext_resource type="Texture2D" uid="uid://c4dr1e0uob5dw" path="res://Assets/UI/food_bar.png" id="25_pxk2b"]
+[ext_resource type="Texture2D" uid="uid://d3syet6tap4hg" path="res://Assets/UI/sleep_bar.png" id="26_n71hj"]
+[ext_resource type="PackedScene" uid="uid://b2amsymgja4gx" path="res://Scenes/UI/shop.tscn" id="27_8o0mb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hg70u"]
+size = Vector2(270, 338)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i2owd"]
+size = Vector2(405, 494.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t3bgm"]
 atlas = ExtResource("9_qhquw")
@@ -201,6 +223,232 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqc6x"]
+atlas = ExtResource("12_umx0i")
+region = Rect2(0, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vogdq"]
+atlas = ExtResource("13_ikw3f")
+region = Rect2(0, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgdcv"]
+atlas = ExtResource("13_ikw3f")
+region = Rect2(1280, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ye14h"]
+atlas = ExtResource("13_ikw3f")
+region = Rect2(2560, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0438"]
+atlas = ExtResource("14_mamt4")
+region = Rect2(0, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5oqo5"]
+atlas = ExtResource("15_t7rgf")
+region = Rect2(0, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44po1"]
+atlas = ExtResource("15_t7rgf")
+region = Rect2(1280, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6n6e"]
+atlas = ExtResource("15_t7rgf")
+region = Rect2(2560, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dy5ae"]
+atlas = ExtResource("16_cj0ey")
+region = Rect2(0, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4d8y"]
+atlas = ExtResource("16_cj0ey")
+region = Rect2(1280, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcoev"]
+atlas = ExtResource("16_cj0ey")
+region = Rect2(2560, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gphw"]
+atlas = ExtResource("16_cj0ey")
+region = Rect2(3840, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pto2o"]
+atlas = ExtResource("16_cj0ey")
+region = Rect2(5120, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnm7v"]
+atlas = ExtResource("16_cj0ey")
+region = Rect2(6400, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plpp3"]
+atlas = ExtResource("16_cj0ey")
+region = Rect2(7680, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5nfib"]
+atlas = ExtResource("16_cj0ey")
+region = Rect2(8960, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7buye"]
+atlas = ExtResource("16_cj0ey")
+region = Rect2(10240, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8ket"]
+atlas = ExtResource("16_cj0ey")
+region = Rect2(11520, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqt8o"]
+atlas = ExtResource("17_3n705")
+region = Rect2(0, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvbu3"]
+atlas = ExtResource("17_3n705")
+region = Rect2(1280, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xkywh"]
+atlas = ExtResource("17_3n705")
+region = Rect2(2560, 0, 1280, 1280)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ckofq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqc6x")
+}],
+"loop": true,
+"name": &"bed1_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vogdq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgdcv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ye14h")
+}],
+"loop": true,
+"name": &"bed1_sleep",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d0438")
+}],
+"loop": true,
+"name": &"bed2_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5oqo5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44po1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6n6e")
+}],
+"loop": true,
+"name": &"bed2_sleep",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dy5ae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4d8y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcoev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gphw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pto2o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnm7v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plpp3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5nfib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7buye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8ket")
+}],
+"loop": true,
+"name": &"bed3_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eqt8o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvbu3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xkywh")
+}],
+"loop": true,
+"name": &"bed3_sleep",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_w3tso"]
+font_size = 80
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w8njy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j8tdp"]
+bg_color = Color(3.1285e-07, 0.58865, 0.28184, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fyxs0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nfbjp"]
+bg_color = Color(1, 0.343718, 0.272831, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aiqmy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_bgnlb")
+}],
+"loop": true,
+"name": &"bored",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_k1l37")
+}],
+"loop": true,
+"name": &"hungry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_mkdod")
+}],
+"loop": true,
+"name": &"sleepy",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1tgpv"]
+bg_color = Color(0.691063, 0, 0.0652721, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uobfc"]
+bg_color = Color(0.141911, 0.561871, 0, 1)
+
 [node name="Home" type="Node2D"]
 script = ExtResource("1_u2558")
 
@@ -212,6 +460,18 @@ texture = ExtResource("1_m4mgf")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(959, 528)
+
+[node name="TVArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TVArea"]
+position = Vector2(863, 699)
+shape = SubResource("RectangleShape2D_hg70u")
+
+[node name="BedArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BedArea"]
+position = Vector2(1606.5, 602.75)
+shape = SubResource("RectangleShape2D_i2owd")
 
 [node name="tv" type="AnimatedSprite2D" parent="."]
 position = Vector2(854, 557)
@@ -233,3 +493,180 @@ scale = Vector2(0.416406, 0.416406)
 sprite_frames = SubResource("SpriteFrames_rorwq")
 animation = &"level1"
 autoplay = "level1"
+
+[node name="bed" type="AnimatedSprite2D" parent="."]
+position = Vector2(1618, 628)
+scale = Vector2(0.476563, 0.476563)
+sprite_frames = SubResource("SpriteFrames_ckofq")
+animation = &"bed1_idle"
+autoplay = "bed1_idle"
+
+[node name="MiniGames" type="Button" parent="."]
+offset_left = 1702.0
+offset_top = 121.0
+offset_right = 1798.0
+offset_bottom = 217.0
+
+[node name="Mini-game-icon" type="Sprite2D" parent="MiniGames"]
+texture_filter = 1
+position = Vector2(43, 43)
+scale = Vector2(0.249249, 0.249249)
+texture = ExtResource("18_dodjy")
+
+[node name="MiniGamesMenu" type="ColorRect" parent="."]
+visible = false
+z_index = 5
+offset_left = 2.0
+offset_top = -7.0
+offset_right = 1916.0
+offset_bottom = 1079.0
+color = Color(0.321728, 0.321728, 0.321728, 1)
+
+[node name="idle" type="Button" parent="MiniGamesMenu"]
+process_mode = 2
+layout_mode = 0
+offset_left = 700.0
+offset_top = 431.0
+offset_right = 1200.0
+offset_bottom = 481.0
+theme_override_font_sizes/font_size = 30
+text = "Idle"
+
+[node name="dodging" type="Button" parent="MiniGamesMenu"]
+process_mode = 2
+layout_mode = 0
+offset_left = 700.0
+offset_top = 511.0
+offset_right = 1200.0
+offset_bottom = 561.0
+theme_override_font_sizes/font_size = 30
+text = "Dodging"
+
+[node name="clicker" type="Button" parent="MiniGamesMenu"]
+process_mode = 2
+layout_mode = 0
+offset_left = 700.0
+offset_top = 597.0
+offset_right = 1200.0
+offset_bottom = 647.0
+theme_override_font_sizes/font_size = 30
+text = "Clicker"
+
+[node name="Label" type="Label" parent="MiniGamesMenu"]
+layout_mode = 0
+offset_left = 237.0
+offset_top = 262.0
+offset_right = 1742.0
+offset_bottom = 376.0
+text = "Which mini-game do you want to play?"
+label_settings = SubResource("LabelSettings_w3tso")
+
+[node name="ProgressToGood" type="ProgressBar" parent="."]
+offset_left = 1029.0
+offset_top = 164.0
+offset_right = 1509.0
+offset_bottom = 191.0
+theme_override_styles/background = SubResource("StyleBoxFlat_w8njy")
+theme_override_styles/fill = SubResource("StyleBoxFlat_j8tdp")
+show_percentage = false
+
+[node name="ProgressToBad" type="ProgressBar" parent="."]
+offset_left = 550.0
+offset_top = 164.0
+offset_right = 1029.0
+offset_bottom = 191.0
+theme_override_styles/background = SubResource("StyleBoxFlat_fyxs0")
+theme_override_styles/fill = SubResource("StyleBoxFlat_nfbjp")
+fill_mode = 1
+show_percentage = false
+
+[node name="Health" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1502, 161)
+scale = Vector2(0.655556, 0.655556)
+texture = ExtResource("19_my0mp")
+
+[node name="BatWingsFlapping-sheet" type="Sprite2D" parent="."]
+position = Vector2(553, 156)
+scale = Vector2(0.228125, 0.228125)
+texture = ExtResource("20_jm2to")
+hframes = 10
+
+[node name="VampireNormal" type="Sprite2D" parent="."]
+position = Vector2(1030, 144)
+scale = Vector2(0.130469, 0.130469)
+texture = ExtResource("4_apcku")
+hframes = 4
+
+[node name="Emote" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(1223, 349)
+scale = Vector2(0.428125, 0.428125)
+sprite_frames = SubResource("SpriteFrames_aiqmy")
+animation = &"bored"
+
+[node name="boredomBar" type="ProgressBar" parent="."]
+offset_left = 850.0
+offset_top = 929.0
+offset_right = 1083.0
+offset_bottom = 1031.0
+theme_override_styles/background = SubResource("StyleBoxFlat_1tgpv")
+theme_override_styles/fill = SubResource("StyleBoxFlat_uobfc")
+show_percentage = false
+
+[node name="BoredomBar" type="Sprite2D" parent="boredomBar"]
+position = Vector2(76.0001, 55)
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("24_w1hgy")
+
+[node name="sleepBar" type="ProgressBar" parent="."]
+offset_left = 1440.0
+offset_top = 927.0
+offset_right = 1672.0
+offset_bottom = 1026.0
+theme_override_styles/background = SubResource("StyleBoxFlat_1tgpv")
+theme_override_styles/fill = SubResource("StyleBoxFlat_uobfc")
+show_percentage = false
+
+[node name="SleepBar" type="Sprite2D" parent="sleepBar"]
+position = Vector2(54, 207)
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("26_n71hj")
+
+[node name="foodBar" type="ProgressBar" parent="."]
+offset_left = 271.0
+offset_top = 924.0
+offset_right = 503.0
+offset_bottom = 1022.0
+theme_override_styles/background = SubResource("StyleBoxFlat_1tgpv")
+theme_override_styles/fill = SubResource("StyleBoxFlat_uobfc")
+show_percentage = false
+
+[node name="FoodBar" type="Sprite2D" parent="foodBar"]
+position = Vector2(60, -120)
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("25_pxk2b")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 156.0
+offset_top = 136.0
+offset_right = 325.0
+offset_bottom = 215.0
+theme_override_font_sizes/font_size = 50
+text = "SHOP"
+
+[node name="shop" parent="." instance=ExtResource("27_8o0mb")]
+visible = false
+
+[node name="SleepingTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="input_event" from="TVArea" to="." method="_on_tv_area_input_event"]
+[connection signal="input_event" from="BedArea" to="." method="_on_bed_area_input_event"]
+[connection signal="pressed" from="MiniGames" to="." method="_on_mini_games_pressed"]
+[connection signal="pressed" from="MiniGamesMenu/idle" to="." method="_on_idle_pressed"]
+[connection signal="pressed" from="MiniGamesMenu/dodging" to="." method="_on_dodging_pressed"]
+[connection signal="pressed" from="MiniGamesMenu/clicker" to="." method="_on_clicker_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="SleepingTimer" to="." method="_on_sleeping_timer_timeout"]

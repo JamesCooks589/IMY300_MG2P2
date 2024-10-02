@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b2amsymgja4gx"]
+[gd_scene load_steps=11 format=3 uid="uid://b2amsymgja4gx"]
 
 [ext_resource type="Texture2D" uid="uid://2jolrd7shvym" path="res://Assets/Home/mini-game-icon.png" id="1_rwm1q"]
 [ext_resource type="Script" path="res://Scenes/UI/shop.gd" id="1_tty4k"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b3lp3q5o66wro" path="res://Assets/Home/tvs/level1_tv.png" id="6_d3u3l"]
 [ext_resource type="Texture2D" uid="uid://edv1i321vxqk" path="res://Assets/Clicker/vampire_hunter_idle.png" id="7_0ktkt"]
 [ext_resource type="Texture2D" uid="uid://dnsdsagoeovhu" path="res://Assets/Home/beds/bed1_idle.png" id="8_xl3nq"]
+[ext_resource type="AudioStream" uid="uid://dflspey1jfucf" path="res://Assets/Sound/Click - Sound Effect (HD)-[AudioTrimmer.com].mp3" id="10_h65tb"]
 
 [node name="shop" type="Node2D"]
 process_mode = 2
@@ -20,11 +21,11 @@ offset_bottom = 1078.0
 color = Color(0.281187, 0.281187, 0.281187, 1)
 
 [node name="Label" type="Label" parent="."]
-offset_left = 24.0
-offset_top = 30.0
-offset_right = 509.0
-offset_bottom = 167.0
-theme_override_font_sizes/font_size = 100
+offset_left = 22.0
+offset_top = 34.0
+offset_right = 524.0
+offset_bottom = 154.0
+theme_override_font_sizes/font_size = 75
 text = "THE SHOP"
 
 [node name="Label2" type="Label" parent="."]
@@ -121,9 +122,9 @@ scale = Vector2(0.0472656, 0.0472656)
 texture = ExtResource("8_xl3nq")
 
 [node name="RightUpgrade2" type="Button" parent="."]
-offset_left = 144.0
+offset_left = 92.0
 offset_top = 981.0
-offset_right = 402.0
+offset_right = 469.0
 offset_bottom = 1058.0
 theme_override_font_sizes/font_size = 50
 text = "EXIT SHOP"
@@ -157,6 +158,11 @@ offset_left = 21.0
 offset_top = 630.0
 offset_right = 519.0
 offset_bottom = 713.0
+
+[node name="click" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("10_h65tb")
+volume_db = -5.417
 
 [connection signal="toggled" from="MiniGameUpgrade" to="." method="_on_mini_game_upgrade_toggled"]
 [connection signal="toggled" from="VampireUpgrades" to="." method="_on_vampire_upgrades_toggled"]

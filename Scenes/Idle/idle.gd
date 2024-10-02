@@ -37,4 +37,5 @@ func update_UI():
 
 
 func _on_return_home_pressed():
+	$click.play()
 	get_tree().change_scene_to_file("res://Scenes/Home/home.tscn")

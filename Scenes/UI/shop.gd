@@ -56,7 +56,7 @@ func _process(delta):
 				$Upgrade2.disabled = true
 				
 			if !State.idle_higher_chance:
-				$Upgrade3.text = "Higher chance for valuable loot (Cost: " + str(State.idle_upgrade3_cost) + ")"
+				$Upgrade3.text = "More Lucky Finds (Cost: " + str(State.idle_upgrade3_cost) + ")"
 				$Upgrade3.disabled = false
 			else:
 				$Upgrade3.text = "MAXED"
@@ -163,16 +163,19 @@ func _process(delta):
 
 func _on_mini_game_upgrade_toggled(toggled_on):
 	if toggled_on:
+		$click.play()
 		$VampireUpgrades.button_pressed = false
 
 
 func _on_vampire_upgrades_toggled(toggled_on):
 	if toggled_on:
+		$click.play()
 		$MiniGameUpgrade.button_pressed = false
 
 
 func _on_left_upgrade_toggled(toggled_on):
 	if toggled_on:
+		$click.play()
 		$MiddleUpgrade.button_pressed = false
 		$RightUpgrade.button_pressed = false
 		
@@ -180,21 +183,25 @@ func _on_left_upgrade_toggled(toggled_on):
 
 func _on_middle_upgrade_toggled(toggled_on):
 	if toggled_on:
+		$click.play()
 		$LeftUpgrade.button_pressed = false
 		$RightUpgrade.button_pressed = false
 
 func _on_right_upgrade_toggled(toggled_on):
 	if toggled_on:
+		$click.play()
 		$LeftUpgrade.button_pressed = false
 		$MiddleUpgrade.button_pressed = false
 
 
 func _on_right_upgrade_2_pressed():
+	$click.play()
 	State.showShop = false
 	get_tree().paused = false
 
 
 func _on_upgrade_1_pressed():
+	$click.play()
 	if menu == "dodging":
 		if State.GOLD >= State.dodge_upgrade1_cost:
 			State.GOLD -= State.dodge_upgrade1_cost
@@ -235,6 +242,7 @@ func _on_upgrade_1_pressed():
 
 
 func _on_upgrade_2_pressed():
+	$click.play()
 	if menu == "dodging":
 		if State.GOLD >= State.dodge_upgrade2_cost:
 			State.GOLD -= State.dodge_upgrade2_cost
@@ -279,6 +287,7 @@ func _on_upgrade_2_pressed():
 
 
 func _on_upgrade_3_pressed():
+	$click.play()
 	if menu == "dodging":
 		if State.GOLD >= State.dodge_upgrade3_cost:
 			State.GOLD -= State.dodge_upgrade3_cost

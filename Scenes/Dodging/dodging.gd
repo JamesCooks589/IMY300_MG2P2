@@ -94,11 +94,13 @@ func reset_game():
 	get_tree().reload_current_scene()  # Reload the current scene
 
 func _on_play_again_pressed():
+	$click.play()
 	State.retryClicked = true
 	reset_game()
 
 
 func _on_play_again_2_pressed():
+	$click.play()
 	get_tree().paused = false
 	State.retryClicked = false
 	get_tree().change_scene_to_file("res://Scenes/Home/home.tscn")

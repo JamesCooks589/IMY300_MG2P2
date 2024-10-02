@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://cgwfl8ygd8u1b"]
+[gd_scene load_steps=92 format=3 uid="uid://cgwfl8ygd8u1b"]
 
 [ext_resource type="Texture2D" uid="uid://bm815fyfj5big" path="res://Assets/Home/room.png" id="1_m4mgf"]
 [ext_resource type="Script" path="res://Scenes/Home/home.gd" id="1_u2558"]
@@ -27,12 +27,24 @@
 [ext_resource type="Texture2D" uid="uid://c4dr1e0uob5dw" path="res://Assets/UI/food_bar.png" id="25_pxk2b"]
 [ext_resource type="Texture2D" uid="uid://d3syet6tap4hg" path="res://Assets/UI/sleep_bar.png" id="26_n71hj"]
 [ext_resource type="PackedScene" uid="uid://b2amsymgja4gx" path="res://Scenes/UI/shop.tscn" id="27_8o0mb"]
+[ext_resource type="Texture2D" uid="uid://c030pcbx2aspv" path="res://Assets/Home/fridges/both_gray.png" id="28_87guu"]
+[ext_resource type="Texture2D" uid="uid://byqyku23v7rah" path="res://Assets/Home/fridges/bottom_gray.png" id="29_4mll1"]
+[ext_resource type="Texture2D" uid="uid://dxoj1e1i751e2" path="res://Assets/Home/fridges/options.png" id="30_sramd"]
+[ext_resource type="Texture2D" uid="uid://dfc31i76h2ggp" path="res://Assets/Home/fridges/food_options/burger.png" id="31_hpe1n"]
+[ext_resource type="Texture2D" uid="uid://blpsn7s7ghsvf" path="res://Assets/Home/fridges/food_options/watermellon.png" id="32_yec87"]
+[ext_resource type="Texture2D" uid="uid://dkcpukqk05jhm" path="res://Assets/Home/fridges/food_options/blood.png" id="33_4n6go"]
+[ext_resource type="Texture2D" uid="uid://c3grnsdwhapmf" path="res://Assets/Home/fridges/food_options/broccoli.png" id="34_pltul"]
+[ext_resource type="AudioStream" uid="uid://cplihbtl02e4p" path="res://Assets/Sound/Vampire Survivors Soundtrack - Dust Elementals (looping).mp3" id="35_f15cw"]
+[ext_resource type="AudioStream" uid="uid://dflspey1jfucf" path="res://Assets/Sound/Click - Sound Effect (HD)-[AudioTrimmer.com].mp3" id="36_28wfh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hg70u"]
 size = Vector2(270, 338)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i2owd"]
 size = Vector2(405, 494.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gu3x6"]
+size = Vector2(1496.34, 1389.9)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t3bgm"]
 atlas = ExtResource("9_qhquw")
@@ -449,6 +461,33 @@ bg_color = Color(0.691063, 0, 0.0652721, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uobfc"]
 bg_color = Color(0.141911, 0.561871, 0, 1)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_n1rh3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_87guu")
+}],
+"loop": true,
+"name": &"both_gray",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_4mll1")
+}],
+"loop": true,
+"name": &"bottom_gray",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_sramd")
+}],
+"loop": true,
+"name": &"options",
+"speed": 5.0
+}]
+
 [node name="Home" type="Node2D"]
 script = ExtResource("1_u2558")
 
@@ -472,6 +511,14 @@ shape = SubResource("RectangleShape2D_hg70u")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BedArea"]
 position = Vector2(1606.5, 602.75)
 shape = SubResource("RectangleShape2D_i2owd")
+
+[node name="fridgeArea" type="Area2D" parent="."]
+position = Vector2(373.181, 860.206)
+scale = Vector2(0.44375, 0.44375)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fridgeArea"]
+position = Vector2(-95.0563, -704.951)
+shape = SubResource("RectangleShape2D_gu3x6")
 
 [node name="tv" type="AnimatedSprite2D" parent="."]
 position = Vector2(854, 557)
@@ -554,11 +601,11 @@ text = "Clicker"
 
 [node name="Label" type="Label" parent="MiniGamesMenu"]
 layout_mode = 0
-offset_left = 237.0
-offset_top = 262.0
-offset_right = 1742.0
-offset_bottom = 376.0
-text = "Which mini-game do you want to play?"
+offset_left = 97.0
+offset_top = 240.0
+offset_right = 1807.0
+offset_bottom = 354.0
+text = "Choose a mini-game to play"
 label_settings = SubResource("LabelSettings_w3tso")
 
 [node name="ProgressToGood" type="ProgressBar" parent="."]
@@ -662,11 +709,86 @@ visible = false
 wait_time = 2.0
 one_shot = true
 
+[node name="FoodOptions" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(276, 708)
+scale = Vector2(0.44375, 0.44375)
+sprite_frames = SubResource("SpriteFrames_n1rh3")
+animation = &"both_gray"
+flip_h = true
+
+[node name="burger" type="Button" parent="FoodOptions"]
+offset_left = 221.0
+offset_top = -374.0
+offset_right = 591.0
+offset_bottom = -221.0
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="FoodOptions/burger"]
+position = Vector2(198.155, 58.507)
+scale = Vector2(0.380161, 0.380161)
+texture = ExtResource("31_hpe1n")
+
+[node name="watermelon" type="Button" parent="FoodOptions"]
+offset_left = 223.0
+offset_top = -137.0
+offset_right = 588.0
+offset_bottom = 9.0
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="FoodOptions/watermelon"]
+position = Vector2(191.648, 76.1549)
+scale = Vector2(0.246556, 0.246556)
+texture = ExtResource("32_yec87")
+
+[node name="blood" type="Button" parent="FoodOptions"]
+offset_left = 223.0
+offset_top = 101.0
+offset_right = 577.0
+offset_bottom = 248.0
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="FoodOptions/blood"]
+position = Vector2(178.127, 70.2677)
+scale = Vector2(0.216626, 0.216626)
+texture = ExtResource("33_4n6go")
+
+[node name="broccoli" type="Button" parent="FoodOptions"]
+offset_left = 219.0
+offset_top = 343.0
+offset_right = 568.0
+offset_bottom = 465.0
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="FoodOptions/broccoli"]
+position = Vector2(170.859, 62.6338)
+scale = Vector2(0.197904, 0.197904)
+texture = ExtResource("34_pltul")
+
+[node name="TransformationTimer" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("35_f15cw")
+volume_db = -11.917
+autoplay = true
+
+[node name="click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("36_28wfh")
+volume_db = -5.417
+
 [connection signal="input_event" from="TVArea" to="." method="_on_tv_area_input_event"]
 [connection signal="input_event" from="BedArea" to="." method="_on_bed_area_input_event"]
+[connection signal="input_event" from="fridgeArea" to="." method="_on_fridge_area_input_event"]
 [connection signal="pressed" from="MiniGames" to="." method="_on_mini_games_pressed"]
 [connection signal="pressed" from="MiniGamesMenu/idle" to="." method="_on_idle_pressed"]
 [connection signal="pressed" from="MiniGamesMenu/dodging" to="." method="_on_dodging_pressed"]
 [connection signal="pressed" from="MiniGamesMenu/clicker" to="." method="_on_clicker_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="SleepingTimer" to="." method="_on_sleeping_timer_timeout"]
+[connection signal="pressed" from="FoodOptions/burger" to="." method="_on_burger_pressed"]
+[connection signal="pressed" from="FoodOptions/watermelon" to="." method="_on_watermelon_pressed"]
+[connection signal="pressed" from="FoodOptions/blood" to="." method="_on_blood_pressed"]
+[connection signal="pressed" from="FoodOptions/broccoli" to="." method="_on_broccoli_pressed"]
+[connection signal="timeout" from="TransformationTimer" to="." method="_on_transformation_timer_timeout"]

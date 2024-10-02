@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://wss8c7utmsi1"]
+[gd_scene load_steps=29 format=3 uid="uid://wss8c7utmsi1"]
 
 [ext_resource type="Script" path="res://Scenes/Idle/idle.gd" id="1_al5fn"]
 [ext_resource type="Texture2D" uid="uid://dpc77iobnh77m" path="res://Assets/Idle/background_road.png" id="1_xjlyf"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://ci3qjqnt0ne2i" path="res://Assets/Idle/car_1.png" id="7_8y0m0"]
 [ext_resource type="Texture2D" uid="uid://dqhp0k2wmheuj" path="res://Assets/Idle/car_2.png" id="8_dbo0x"]
 [ext_resource type="Texture2D" uid="uid://y35qjaqi0cu5" path="res://Assets/Idle/car_3.png" id="9_4377x"]
+[ext_resource type="AudioStream" uid="uid://bfr3b0knrajr4" path="res://Assets/Sound/Vampire Survivors Soundtrack - Red and Blue (looping).mp3" id="10_nlo2q"]
+[ext_resource type="AudioStream" uid="uid://dflspey1jfucf" path="res://Assets/Sound/Click - Sound Effect (HD)-[AudioTrimmer.com].mp3" id="11_4ui80"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n6whf"]
 animations = [{
@@ -228,6 +230,15 @@ offset_right = -378.0
 offset_bottom = -868.0
 theme_override_font_sizes/font_size = 50
 text = "RETURN HOME"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_nlo2q")
+volume_db = -10.292
+autoplay = true
+
+[node name="click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_4ui80")
+volume_db = -5.417
 
 [connection signal="area_entered" from="PawnShopArea" to="." method="_on_pawn_shop_area_area_entered"]
 [connection signal="pressed" from="return_home" to="." method="_on_return_home_pressed"]

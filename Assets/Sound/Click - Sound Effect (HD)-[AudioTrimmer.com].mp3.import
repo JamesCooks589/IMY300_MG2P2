@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dflspey1jfucf"
+path="res://.godot/imported/Click - Sound Effect (HD)-[AudioTrimmer.com].mp3-04e6ecf6ac78fbd336b6de631097cb30.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Click - Sound Effect (HD)-[AudioTrimmer.com].mp3"
+dest_files=["res://.godot/imported/Click - Sound Effect (HD)-[AudioTrimmer.com].mp3-04e6ecf6ac78fbd336b6de631097cb30.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

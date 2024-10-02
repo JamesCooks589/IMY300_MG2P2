@@ -12,7 +12,8 @@ func _ready():
 	State.hasDrainedInMiniGame = false
 	$ProgressBar.max_value = npc_max_hp
 	healthbar_update()
-
+	$Label2.text = "GOLD: " + str(State.GOLD)
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if npc_current_hp <= 0:
@@ -20,6 +21,7 @@ func _process(_delta):
 	$Label.text = str(npc_current_hp) + "/" + str(npc_max_hp)
 	
 	$ProgressBar.max_value = npc_max_hp
+	$Label2.text = "GOLD: " + str(State.GOLD)
 
 func healthbar_update():
 	$ProgressBar.value = npc_current_hp
@@ -62,4 +64,5 @@ func _on_animated_sprite_2d_animation_finished():
 
 
 func _on_return_home_pressed():
+	$click.play()
 	get_tree().change_scene_to_file("res://Scenes/Home/home.tscn")
